@@ -1,0 +1,30 @@
+.section-partners {
+  z-index: 1;
+  color: #ffffff;
+  background-color: #c1c0bb;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../../../assets/img/bg-castle.jpg);
+}
+
+.partners {
+  column-gap: 2rem;
+
+  &__link {
+    text-decoration: none;
+  }
+
+  &__image {
+    display: block;
+    max-height: 120px;
+    max-width: 230px;
+    filter: opacity(1) drop-shadow(0 0 0 rgb(255, 255, 255));
+
+    @media (min-width: 600px) {
+      max-height: 160px;
+      max-width: 350px;
+    }
+  }
+}

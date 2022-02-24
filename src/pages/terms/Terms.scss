@@ -1,0 +1,109 @@
+.article {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, 'Noto Sans', 'Liberation Sans', sans-serif, 'Apple Color Emoji',
+    'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  font-size: 1rem;
+  line-height: 1.5;
+
+  @media (min-width: 600px) {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__aside {
+    margin-bottom: 3.25rem;
+
+    @media (min-width: 600px) {
+      width: 12.5rem;
+      margin-right: 2rem;
+      margin-bottom: 0;
+      flex: none;
+    }
+
+    @media (min-width: 900px) {
+      width: 18.75rem;
+      margin-right: 1.25rem;
+    }
+  }
+
+  &__content {
+    flex: auto;
+
+    & h1,
+    & h2,
+    & h3 {
+      font-family: 'goudy_mediaeval', Arial, sans-serif;
+    }
+
+    & h2 {
+      font-weight: 700;
+    }
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .article--sticky-aside .article__aside {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 9rem;
+  }
+}
+
+.aside-nav {
+  &__title {
+    position: relative;
+    font-family: 'goudy_mediaeval', Arial, sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+
+    @media screen and (min-width: 22.5rem) {
+      font-size: calc(1.5rem + 0.25 * ((100vw - 22.5rem) / 77.5));
+    }
+
+    @media screen and (min-width: 100rem) {
+      font-size: 1.75rem;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: -2em;
+      top: 25%;
+      width: 1.75em;
+      height: 1.75em;
+      transform: translateY(-50%) rotate(60deg);
+      background: url(../../assets/img/compass-nnw.png) center/contain no-repeat;
+    }
+  }
+
+  &__menu {
+    font-size: 1rem;
+
+    & li > a.active {
+      font-weight: 700;
+    }
+  }
+
+  & ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    & li + li {
+      margin-top: 1em;
+    }
+
+    & ul {
+      margin-top: 0.75em;
+      margin-left: 1.25rem;
+    }
+  }
+}

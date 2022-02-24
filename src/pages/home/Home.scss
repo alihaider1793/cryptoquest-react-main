@@ -1,0 +1,27 @@
+.home__bottom-images {
+  height: 120px;
+
+  @media (min-width: 600px) {
+    height: 200px;
+  }
+
+  @media (min-width: 900px) {
+    height: 300px;
+  }
+
+  @media (min-width: 1200px) {
+    height: 350px;
+  }
+
+  &--1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &--2 {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}

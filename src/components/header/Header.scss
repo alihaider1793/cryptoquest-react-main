@@ -1,0 +1,123 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  height: 65px;
+  color: #e2e2e2;
+  background-color: #000;
+  transition: 0.3s ease-in-out;
+  transition-property: transform;
+  touch-action: manipulation;
+
+  @media (min-width: 1200px) {
+    height: 100px;
+  }
+
+  &::after {
+    height: 25px !important;
+    transform: scaleX(1) !important;
+  }
+
+  & > .container {
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+  }
+
+  @media (min-width: 1200px) {
+    .hidden-desktop {
+      display: none;
+    }
+  }
+
+  &__icons {
+    --gap: 0.75rem;
+    position: absolute;
+    right: calc(0.9375rem + 40px + 0.5rem);
+
+    @media (min-width: 360px) {
+      right: calc(0.9375rem + 60px + 0.5rem);
+    }
+
+    @media (min-width: 600px) {
+      --gap: initial;
+    }
+
+    @media (min-width: 1200px) {
+      right: 2.5rem;
+    }
+
+    & li > a {
+      transition: color 0.15s;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    &--mobile {
+      --gap: 1.25rem;
+      position: static;
+    }
+  }
+
+  &__action {
+    --padding-y: 0.5rem;
+    --text-offset: 0px;
+    position: relative;
+    cursor: pointer;
+
+    @media (max-width: 600px) {
+      border: none;
+    }
+  }
+
+  &__action-text {
+    transform: translateY(0.05em);
+  }
+
+  & .dropdown {
+    --dropdown-offset: 1.5rem;
+  }
+
+  & p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &--hidden {
+    transform: translateY(calc((100% + 35px) * -1));
+  }
+}
+
+.brand {
+  position: absolute;
+  left: 0.9375rem;
+
+  @media (min-width: 1200px) {
+    left: 2.5rem;
+  }
+
+  &__logo {
+    width: 80px;
+
+    @media (min-width: 360px) {
+      width: 100px;
+    }
+
+    @media (min-width: 1200px) {
+      width: 160px;
+    }
+
+    & img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}

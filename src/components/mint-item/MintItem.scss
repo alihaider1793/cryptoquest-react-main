@@ -1,0 +1,148 @@
+.mint {
+  &__body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+
+    @media (min-width: 900px) {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  }
+
+  &__image {
+    flex: none;
+    position: relative;
+
+    @media (min-width: 900px) {
+      width: 33.3333333333%;
+    }
+
+    &::before,
+    &::after {
+      /* content: ""; */
+      position: absolute;
+    }
+
+    &::before {
+      bottom: 0;
+      left: 1.25rem;
+      right: 1.25rem;
+      height: 1px;
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        #d9d9d9 25%,
+        #d9d9d9 75%,
+        rgba(255, 255, 255, 0) 100%
+      );
+    }
+
+    &::after {
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background-color: #fff;
+    }
+  }
+
+  &__main {
+    flex: auto;
+  }
+
+  &__buy {
+    --gap: 4rem;
+
+    @media (min-width: 600px) {
+      --gap: 6rem;
+    }
+
+    & > * {
+      position: relative;
+      padding-left: calc(var(--gap) * 0.5);
+      padding-right: calc(var(--gap) * 0.5);
+    }
+
+    & > *:first-child {
+      padding-left: 0;
+    }
+
+    & > *:last-child {
+      padding-right: 0;
+    }
+
+    & > *:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 0.05em;
+      bottom: 0.25em;
+      right: 0;
+      border-right: 1px solid #737373;
+    }
+  }
+}
+
+.quantity-control {
+  position: relative;
+  touch-action: manipulation;
+
+  &__label {
+    position: absolute;
+    bottom: 100%;
+
+    @media (min-width: 900px) {
+      bottom: calc(100% - 0.25em);
+    }
+  }
+
+  &__input {
+    width: 3ch;
+    margin-right: 0.25em;
+    padding: 0;
+    border: 0;
+
+    @media (min-width: 900px) {
+      width: 2ch;
+    }
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+
+    & [data-action] {
+      position: relative;
+      line-height: 1;
+      cursor: pointer;
+      transition: opacity 0.15s;
+    }
+
+    & [data-action]:hover,
+    & [data-action]:focus {
+      opacity: 0.6;
+    }
+
+    & [data-action]::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2rem;
+      height: 1.25rem;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

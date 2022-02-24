@@ -1,0 +1,60 @@
+.page-header {
+  --border-top-height: 25px;
+  --padding-y: 3rem;
+  position: relative;
+  z-index: 1;
+  padding-top: calc(var(--padding-y) + var(--border-top-height));
+  padding-bottom: calc(var(--padding-y) - var(--border-bottom-height));
+  background-color: #e5e3e2;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/img/bg-map-portrait.webp);
+
+  @media (min-width: 600px) {
+    --padding-y: 4.5rem;
+  }
+
+  @media (min-width: 900px) {
+    background-image: url(../../assets/img/bg-map.webp);
+  }
+
+  @media (min-width: 1200px) {
+    --border-top-height: 10px;
+    --padding-y: 8rem;
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    font-family: 'goudy_mediaeval', Arial, sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: #434343;
+
+    @media screen and (min-width: 22.5rem) {
+      font-size: calc(3rem + 3 * ((100vw - 22.5rem) / 77.5));
+    }
+
+    @media screen and (min-width: 100rem) {
+      font-size: 6rem;
+    }
+
+    & > span {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -1.75em;
+        top: 15%;
+        width: 1.5em;
+        height: 1.5em;
+        transform: translateY(-50%);
+        background: url(../../assets/img/compass-nnw.png) center/contain
+          no-repeat;
+      }
+    }
+  }
+}

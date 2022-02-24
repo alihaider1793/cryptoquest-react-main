@@ -1,0 +1,57 @@
+.footer {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #e2e2e2;
+  background-color: #343738;
+  background-position: top;
+  background-size: 100%;
+  background-repeat: repeat-y;
+  background-image: url(../../assets/img/bg-metal-portrait.webp);
+
+  @media (min-width: 900px) {
+    text-align: left;
+    background-image: url(../../assets/img/bg-metal.webp);
+  }
+
+  & > .container {
+    padding-top: calc(3.5rem - var(--border-top-height));
+    padding-bottom: 3rem;
+
+    @media (min-width: 900px) {
+      padding-top: calc(4.5rem - var(--border-top-height));
+      padding-bottom: 2rem;
+    }
+  }
+
+  & a {
+    transition: color 0.15s;
+  }
+
+  & a:hover,
+  & a:focus {
+    color: #fff;
+  }
+
+  &-links {
+    &__title {
+      margin-top: 0;
+      margin-bottom: 1.25rem;
+      color: #fff;
+      text-transform: uppercase;
+    }
+
+    &__list {
+      list-style: none;
+      margin-top: 0;
+      padding: 0;
+
+      & li + li {
+        margin-top: 0.75rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+// UTILS
+@import './utils/variables.scss';
+
+// BASE
+@import './base/animations.scss';
+@import './base/reset.scss';
+@import './base/typography.scss';
+@import './base/spacing.scss';
+@import './base/buttons.scss';
+@import './base/global.scss';
+
+// PAGES
+@import '../pages/home/Home.scss';
+@import '../pages/mint-now/MintNow.scss';
+@import '../pages/terms/Terms.scss';
+
+// COMPONENTS
+@import '../components/blog/blog-list/BlogList.scss';
+@import '../components/blog/blog-item/BlogItem.scss';
+@import '../components/blog/post-item/PostItem.scss';
+
+@import '../components/footer/Footer.scss';
+
+@import '../components/header/Header.scss';
+@import '../components/header/header-navigation/HeaderNavigation.scss';
+@import '../components/header/header-right/header-account/HeaderAccount.scss';
+
+@import '../components/home/hero/Hero.scss';
+@import '../components/home/avatars/Avatars.scss';
+@import '../components/home/blog/Blog.scss';
+@import '../components/home/blog/blog-item/BlogItem.scss';
+@import '../components/home/about-us/AboutUs.scss';
+@import '../components/home/team/Team.scss';
+@import '../components/home/partners/Partners.scss';
+
+@import '../components/inventory-item/InventoryItem.scss';
+
+@import '../components/mint-item/MintItem.scss';
+
+@import '../components/modal/Modal.scss';
+
+@import '../components/page-header/PageHeader.scss';

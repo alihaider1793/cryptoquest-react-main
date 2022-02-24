@@ -1,0 +1,66 @@
+.section-about {
+  color: white;
+  z-index: 1;
+  background-color: #212325;
+  background-position: bottom -100px right -100px, center;
+  background-size: auto, cover;
+  background-repeat: no-repeat, no-repeat;
+  background-image: url(../../../assets/img/bg-stains-blue.png),
+    url(../../../assets/img/bg-swords-portrait.webp);
+  transition: all 0.7s ease;
+
+  @media (min-width: 900px) {
+    background-image: url(../../../assets/img/bg-stains-blue.png),
+      url(../../../assets/img/bg-swords.webp);
+  }
+}
+
+.about {
+  &__teaser {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    top: 0;
+    min-width: 100%;
+    height: 100%;
+    opacity: 0.4;
+  }
+
+  &__video {
+    height: 450px;
+    border-radius: 50%;
+  }
+
+  &__para {
+    position: relative;
+    color: #761f14;
+    background: linear-gradient(
+      to right,
+      rgb(255, 244, 222, 0.5),
+      rgb(255, 220, 146, 0.5),
+      rgb(255, 203, 100, 0.5)
+    );
+    padding: 1rem;
+    border-radius: 0 2.5rem 0 2.5rem;
+
+    @media (min-width: 900px) {
+      &--1 {
+        left: -20px;
+      }
+
+      &--3 {
+        left: 20px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      &--1 {
+        left: -150px;
+      }
+
+      &--3 {
+        left: 150px;
+      }
+    }
+  }
+}

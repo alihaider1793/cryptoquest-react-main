@@ -1,0 +1,12 @@
+.blog__item-vertical {
+  display: block;
+  text-decoration: none;
+  max-width: calc(600px - 0.75rem / 2);
+  background-color: white;
+
+  &:hover {
+    color: #761f14;
+    background-image: var(--gradient-1);
+    cursor: pointer;
+  }
+}

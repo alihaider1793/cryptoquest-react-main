@@ -1,0 +1,110 @@
+.section-avatars {
+  z-index: 1;
+  color: #434343;
+  background-color: #d1cfcd;
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/img/bg-map-stain-portrait.webp);
+
+  @media (min-width: 900px) {
+    background-image: url(../../../assets/img/bg-map-stain.webp);
+  }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/img/bg-paper-card.webp);
+  filter: drop-shadow(0 0 2rem rgba(0, 0, 0, 0.25));
+  will-change: transform;
+  transform: translate3d(0, 0, 1px);
+  animation: bounce 1.2s ease-in-out alternate both infinite 1s;
+
+  &:hover {
+    & .card__header {
+      transform: scale(1.1);
+    }
+  }
+
+  &__container {
+    flex: auto;
+    padding: 2rem 2rem 3rem;
+
+    @media (min-width: 1200px) {
+      padding-left: 3rem;
+      padding-right: 3rem;
+    }
+  }
+
+  &__body {
+    position: relative;
+    margin-top: 0.5rem;
+    color: #000;
+    text-shadow: 0 0 0.125rem #fef5e0, 0 0 0.25rem #fef5e0, 0 0 1rem #fef5e0;
+
+    & > :first-child {
+      margin-top: 0;
+    }
+
+    & > :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__image {
+    margin-top: -6rem;
+  }
+
+  &__header {
+    transform: scale(1);
+    transition: all 1s ease;
+  }
+
+  &[class*='card--decoration-'] {
+    & .card__container::before {
+      content: '';
+      position: absolute;
+      width: var(--width);
+      height: calc(var(--width) * var(--ratio));
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  }
+
+  &--decoration-knife {
+    --width: 140px;
+    --ratio: 200 / 210;
+
+    @media (min-width: 1200px) {
+      --width: 210px;
+    }
+
+    & .card__container::before {
+      bottom: 0;
+      left: 0;
+      background-image: url(../../../assets/img/knife.png);
+      transform: translate(-20%, 15%);
+    }
+  }
+
+  &--decoration-book {
+    --width: 80px;
+    --ratio: 137 / 117;
+
+    @media (min-width: 1200px) {
+      --width: 100px;
+    }
+
+    & .card__container::before {
+      bottom: 0;
+      right: 0;
+      background-image: url(../../../assets/img/book.png);
+      transform: translate(25%, -25%);
+    }
+  }
+}

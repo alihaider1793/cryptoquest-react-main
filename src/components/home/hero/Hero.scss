@@ -1,0 +1,114 @@
+.section-hero {
+  color: #e2e2e2;
+  background-color: #343738;
+  background-position: 85% top, center top;
+  background-size: cover, 100%;
+  background-repeat: no-repeat, repeat-y;
+  background-image: url(../../../assets/img/bg-dragon.webp),
+    url(../../../assets/img/bg-metal-portrait.webp);
+
+  @media (min-width: 600px) {
+    background-position: 80% top, center top;
+  }
+
+  @media (min-width: 900px) {
+    background-position: right -100px center, center top;
+    background-image: url(../../../assets/img/bg-dragon.webp),
+      url(../../../assets/img/bg-metal.webp);
+  }
+
+  @media (min-width: 1600px) {
+    background-position: right top, center top;
+    background-size: contain, 100%;
+  }
+
+  &__logo {
+    width: 10rem;
+
+    @media (min-width: 900px) {
+      width: 15rem;
+    }
+
+    @media (min-width: 1200px) {
+      width: 20rem;
+    }
+  }
+
+  &__play {
+    cursor: pointer;
+
+    &:hover .icon,
+    &:focus .icon {
+      opacity: 0.9;
+    }
+
+    & .icon {
+      font-size: 5rem;
+      opacity: 0.75;
+      transition: opacity 0.3s;
+
+      @media (min-width: 900px) {
+        font-size: 7.5rem;
+      }
+    }
+  }
+}
+
+.player {
+  -webkit-mask: url(../../../assets/img/video-mask.svg) center/100% no-repeat;
+  mask: url(../../../assets/img/video-mask.svg) center/100% no-repeat;
+
+  &__video {
+    transform: scale(0);
+    opacity: 0;
+    transition: all 2s;
+  }
+
+  &__overlay {
+    transition: all 0.3s;
+  }
+
+  &__play {
+    &:hover .icon,
+    &:focus .icon {
+      transform: scale(1.05);
+    }
+
+    & .icon {
+      transition: all 0.3s;
+    }
+  }
+}
+
+.player--loading {
+  & .player__overlay {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.player--playing {
+  & .player__video {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  & .player__overlay {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.embed {
+  position: relative;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  & > * {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
